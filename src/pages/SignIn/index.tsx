@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import Background from '../../components/Background';
 import {
   Container,
@@ -10,6 +11,8 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Background>
       <Container>
@@ -18,7 +21,7 @@ const SignIn: React.FC = () => {
         <TextOne>Millions of songs.</TextOne>
         <TextTwo>Free on Spotify.</TextTwo>
 
-        <ButtonLogIn>
+        <ButtonLogIn onPress={() => navigation.navigate('Main')}>
           <TextLogIn>LOG IN</TextLogIn>
         </ButtonLogIn>
       </Container>
